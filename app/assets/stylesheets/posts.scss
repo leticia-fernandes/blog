@@ -1,0 +1,53 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$main-color: #F44336;
+
+.header {
+    height: 200px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: $main-color;
+    color: #fff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-family: 'Indie Flower', cursive;
+}
+
+.add-post {
+    padding: 0 !important;
+    color: $main-color !important;
+    font-size: 40px;
+
+    a {
+        color: $main-color !important;
+    }
+    a:hover {
+        opacity: 50%;
+    }
+}
+
+.post {
+    a { color: lightgray }
+    a:hover { color: $main-color !important }
+    h1 { font-family: 'Balsamiq Sans', cursive }
+    small { color: $main-color }
+    p { margin-top: 25px }
+    p, small { font-family: 'Jost', sans-serif }
+    i {
+        font-size: 25px !important;
+        margin-left: 10px;
+    }
+
+    .footer {
+        font-size: 100px;
+        color: lightgray;
+    }
+
+    .content {
+        padding: 25px;
+        margin-bottom: 60px;
+    }
+
+}

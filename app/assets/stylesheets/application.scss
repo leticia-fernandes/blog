@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap";
+ @import "font-awesome";
+
+ @font-face {
+	font-family: 'Jost';
+	src: url('/assets/Jost-VariableFont_wght.ttf');
+ }
+
+ @font-face {
+	font-family: 'Indie Flower';
+	src: url('/assets/IndieFlower-Regular.ttf');
+ }
+
+ @font-face {
+	font-family: 'Balsamiq Sans';
+	src: url('/assets/BalsamiqSans-Regular.ttf');
+ }

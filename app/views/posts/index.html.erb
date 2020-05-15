@@ -1,0 +1,58 @@
+
+
+<div class="container">
+    <div class="row align-items-end header">
+        <div class="col">
+          <h1>simple blog</h1>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col text-right add-post">
+        <%= link_to fa_icon("plus"),
+                    new_post_path,
+                    title: "New post",
+                    data: { toggle: "tooltip",
+                            placement: "bottom"} %>
+      </div>
+    </div>
+
+
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div class="row">
+        <div class="col-md-10 content">
+          <div class="row">
+            <div class="col">
+              <small><%= post.updated_at.strftime("%d/%m/%Y %H:%M:%S") %></small>
+            </div>
+            <div class="col text-right">
+              <%= link_to fa_icon("pencil"),
+                    edit_post_path(post),
+                    title: "Edit post",
+                    data: { toggle: "tooltip",
+                            placement: "bottom"} %>
+              <%= link_to fa_icon("trash"),
+                    post_path(post),
+                    method: :delete,
+                    title: "Delete post",
+                    data: { confirm: 'Are you sure?',
+                            toggle: "tooltip",
+                            placement: "bottom"} %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h1><%= post.title %></h1>
+              <p class="text-justify"><%= post.text %></p>
+            </div>
+          </div>
+          <div class="row footer align-items-end">
+            <div class="col text-center">...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <% end %>
+</div>
