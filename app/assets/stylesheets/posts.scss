@@ -4,6 +4,14 @@
 
 $main-color: #F44336;
 
+a {
+    color: $main-color !important;
+}
+
+a:hover {
+    opacity: 50%;
+}
+
 .header {
     height: 200px;
     margin-bottom: 20px;
@@ -19,25 +27,30 @@ $main-color: #F44336;
     padding: 0 !important;
     color: $main-color !important;
     font-size: 40px;
-
-    a {
-        color: $main-color !important;
-    }
-    a:hover {
-        opacity: 50%;
-    }
 }
 
 .post {
-    a { color: lightgray }
-    a:hover { color: $main-color !important }
-    h1 { font-family: 'Balsamiq Sans', cursive }
     small { color: $main-color }
+
     p { margin-top: 25px }
     p, small { font-family: 'Jost', sans-serif }
+
+    a { color: lightgray !important }
+    a:hover {
+        color: $main-color !important;
+        opacity: 100%;
+    }
+
     i {
         font-size: 25px !important;
         margin-left: 10px;
+    }
+
+    h1 {
+        font-family: 'Balsamiq Sans', cursive;
+        margin: 15px 0 20px 0;
+
+        a { color: black !important }
     }
 
     .footer {
@@ -51,3 +64,33 @@ $main-color: #F44336;
     }
 
 }
+
+.form-post {
+    margin-bottom: 150px;
+
+    .btn-default {
+        background-color: $main-color;
+        border-color: $main-color;
+        color: white !important;
+    }
+
+    .btn-default:hover {
+        background-color: $main-color;
+        border-color: $main-color;
+        opacity: 80%;
+    }
+
+    .btn-default:focus {
+        background-color: $main-color;
+        border-color: $main-color;
+        opacity: 80%;
+        outline: 0;
+        box-shadow: 0;
+    }
+}
+
+.page-title {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+

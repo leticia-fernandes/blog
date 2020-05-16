@@ -1,11 +1,27 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-<p>
-  <strong>Text:</strong>
-  <%= @post.text %>
-</p>
+<%= link_to '< Posts', posts_path %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to '< Back', posts_path %>
+<div class="post">
+  <div class="row">
+    <div class="col-md-10 content">
+
+      <div class="row">
+        <div class="col text-center">
+          <h1><%= @post.title %></h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col text-right">
+          <small><%= @post.created_at.strftime("%d/%m/%Y %H:%M:%S") %></small>
+          <%= edit_delete_icons(@post) %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p class="text-justify"><%= @post.text %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

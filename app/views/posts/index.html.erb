@@ -1,49 +1,27 @@
-
-
-<div class="container">
-    <div class="row align-items-end header">
-        <div class="col">
-          <h1>simple blog</h1>
+<% if @posts.empty? %>
+   <div class="row">
+      <div class="col-md-10 text-center">
+        <div class="alert alert-light" role="alert">
+          No posts found
         </div>
-    </div>
-
-    <div class="row">
-      <div class="col text-right add-post">
-        <%= link_to fa_icon("plus"),
-                    new_post_path,
-                    title: "New post",
-                    data: { toggle: "tooltip",
-                            placement: "bottom"} %>
       </div>
     </div>
-
-
-  <% @posts.each do |post| %>
+<% else
+    @posts.each do |post| %>
     <div class="post">
       <div class="row">
         <div class="col-md-10 content">
           <div class="row">
             <div class="col">
-              <small><%= post.updated_at.strftime("%d/%m/%Y %H:%M:%S") %></small>
+              <small><%= post.created_at.strftime("%d/%m/%Y %H:%M:%S") %></small>
             </div>
             <div class="col text-right">
-              <%= link_to fa_icon("pencil"),
-                    edit_post_path(post),
-                    title: "Edit post",
-                    data: { toggle: "tooltip",
-                            placement: "bottom"} %>
-              <%= link_to fa_icon("trash"),
-                    post_path(post),
-                    method: :delete,
-                    title: "Delete post",
-                    data: { confirm: 'Are you sure?',
-                            toggle: "tooltip",
-                            placement: "bottom"} %>
+              <%= edit_delete_icons(post) %>
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <h1><%= post.title %></h1>
+              <h1><%= link_to post.title, post_path(post) %></h1>
               <p class="text-justify"><%= post.text %></p>
             </div>
           </div>
@@ -53,6 +31,5 @@
         </div>
       </div>
     </div>
-
-   <% end %>
-</div>
+  <% end %>
+<% end %>
